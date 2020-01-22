@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Alert } from 'react-native';
 import { TodoItem } from './TodoItem';
+import ResetButton from './ResetButton';
 
 const todoItems = [
   { text: "Element 1" },
@@ -11,7 +12,7 @@ const todoItems = [
 
 class TodoList extends Component {
   state = {
-    data: todoItems,
+    data: [...todoItems],
   };
 
   deleteItem = (index) => () => {
@@ -19,6 +20,10 @@ class TodoList extends Component {
 
     data.splice(index, 1);
     this.setState({ data });
+  }
+
+  resetItems = () => {
+    this.setState({ data: [...todoItems] });
   }
 
   render = () =>
@@ -31,6 +36,7 @@ class TodoList extends Component {
           {item.text}
         </TodoItem>
       )}
+      <ResetButton title="Reset" onPress={this.resetItems} />
     </View>
   ;
 }
