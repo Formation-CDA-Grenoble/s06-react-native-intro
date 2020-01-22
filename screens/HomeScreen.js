@@ -12,12 +12,14 @@ import {
 
 import { MonoText } from '../components/StyledText';
 import Title from '../components/Title';
+import { TodoList } from '../components/TodoList';
 
 export default function HomeScreen() {
   return (
     <View>
       <ScrollView style={styles.container}>
         <Title>To-do</Title>
+        <TodoList />
       </ScrollView>
     </View>
   );
