@@ -12,19 +12,14 @@ class AddTodo extends Component {
     this.setState({ currentText: text });
   }
 
-  handlePress = () => {
-    const { addItem } = this.props;
-    const { currentText } = this.state;
-    addItem(currentText);
-  }
-  
   render = () => {
+    const { addItem } = this.props;
     const { currentText } = this.state;
 
     return (
       <View>
         <NameInput onChangeText={this.handleChangeText} value={currentText} />
-        <AddButton title="Add" onPress={this.handlePress} />
+        <AddButton title="Add" onPress={() => addItem(currentText)} />
       </View>
     );
   }
