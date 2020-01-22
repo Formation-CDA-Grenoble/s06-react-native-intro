@@ -30,7 +30,7 @@ class TodoList extends Component {
   addItem = (text) => {
     const { data } = this.state;
 
-    this.setState({ data: [...data, { text } ] });
+    this.setState({ data: [...data, { text }] });
   }
 
   render = () =>

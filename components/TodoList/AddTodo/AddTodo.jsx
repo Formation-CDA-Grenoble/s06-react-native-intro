@@ -17,8 +17,16 @@ class AddTodo extends Component {
     const { currentText } = this.state;
 
     return (
-      <View>
-        <NameInput onChangeText={this.handleChangeText} value={currentText} />
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <NameInput
+          style={{
+            width: '80%',
+            borderColor: '#CCC',
+            borderWidth: 1,
+          }}
+          placeholder="Todo name"
+          onChangeText={this.handleChangeText}
+          value={currentText} />
         <AddButton title="Add" onPress={() => addItem(currentText)} />
       </View>
     );
